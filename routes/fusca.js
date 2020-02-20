@@ -6,10 +6,14 @@ const fuscas = [
     {img:'https://i.ytimg.com/vi/bbRRXF4YQpM/hqdefault.jpg', descricao: ' fusca em otimo estado '}
   ]
 
-  
+router.post('/', (req,res) => {
+    fuscas.push(_.first(fuscas));
+    res.json("ok");
+})
 
 router.get('/', (req,res) => {
    res.json(fuscas);
 })
 
 module.exports = router;
+ 
