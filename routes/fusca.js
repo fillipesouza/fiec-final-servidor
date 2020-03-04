@@ -7,12 +7,17 @@ const fuscas = [
   ]
 
 router.post('/', (req,res) => {
-    fuscas.push(_.first(fuscas));
+    fuscas.push(req.body);
     res.json("ok");
 })
 
 router.get('/', (req,res) => {
    res.json(fuscas);
+})
+
+router.delete('/:id', (req,res) => {
+    fuscas.splice(req.params.id,1);
+    res.json('ok');
 })
 
 module.exports = router;
